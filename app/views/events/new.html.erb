@@ -1,0 +1,56 @@
+<br><br><br>
+<center>
+
+
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><U><h2>Create an event</h2></U></li>
+
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+     <br /> <br />
+<div class="form-group">
+     <%= label_tag 'Name of your event: ' %>
+     <%= text_field_tag 'title' %>
+     <br /> <br />
+ </div>
+      <div class="form-group">
+     <%= label_tag 'Describe your stuff' %>
+     <%= text_area_tag 'description' %>
+     <br /> <br />
+
+      </div>
+        <div class="form-group">
+     <%= label_tag 'How much for your shitty event?' %>
+     <%= text_field_tag 'price' %>
+     <br /> <br />
+
+      </div>
+         <div class="form-group">
+     <%= label_tag 'Where does it take place ?' %>
+     <%= text_field_tag 'location' %>
+     <br /> <br />
+
+      </div>
+
+     <div class="form-group">
+     <%= label_tag 'When does it start bro?' %>
+     <%= text_field_tag 'start_date' %>
+     <br /> <br />
+      </div>
+
+     <div class="form-group">
+     <%= label_tag 'How long is it ?' %>
+     <%= text_field_tag 'duration' %>
+     <br /> <br />
+
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Create my fuckin event</button>
+      </div>
+      
+   <% end %>
+
+
+</center>
+

@@ -1,0 +1,11 @@
+<h1> Yo! See your attendees below: </h1>
+
+    <p> <a class="btn btn-primary" href="<%= edit_event_path(@my_event.id) %>" role="button">Edit my great event</a></p>
+		<%= link_to "Delete my shit", event_path(params[:event_id]), :class => "btn btn-outline-danger", :method => "delete" %>
+		<p> Attendes of your event: <%= @my_event.title %> </p>
+  <% @participants.each do |e| %>
+
+  <p> - <%= e.email %> <%= e.first_name %><%= e.last_name %></p>
+
+ <% end %>
+

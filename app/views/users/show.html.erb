@@ -1,0 +1,33 @@
+<br><br><br>
+
+
+
+<center>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><U><h2>Profile n° <%=@g.id%> </h2></U></li>
+    <li class="list-group-item"><h5>DATE DE CRÉATION : </h5><%=  @g.created_at   %></li>
+    <li class="list-group-item"><h5>First Name :</h5><%=  @g.first_name   %> </li>
+    <li class="list-group-item"><h5>Last Name : </h5><%=  @g.last_name   %></li>
+    <li class="list-group-item"><h5>Description : </h5> <%=  @g.description %></li>
+    <li class="list-group-item"><h5>Email : </h5> <%=  @g.email   %></li>
+
+          <h6 class="border-bottom border-gray pb-2 mb-0">Events you've created</h6>
+          <% @events.each do |e| %>
+
+          <% if current_user.id == e.admin.id %>
+
+          <div class="media text-muted pt-150">
+          <p class="media-body pb-2 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark"><%= e.title %> </strong>
+          </p>
+ 		<p><a class="btn btn-primary" href="<%= event_path(e.id) %>" role="button">See event</a></p>
+          <% end %>
+          <% end %>
+
+        <hr>
+
+      </div> 
+  </ul>
+</div>
+</center>
